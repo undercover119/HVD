@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart & Bouquet</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #ffe6e6;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .text {
+            font-size: 40px;
+            font-weight: bold;
+            color: #ff3366;
+            margin-bottom: 100px;
+        }
+
+        .heart-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .heart {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            top: 10;
+            left: 10;
+            transform: rotate(-45deg);
+            animation: heartbeat 1s infinite;
+        }
+
+        .heart::before, .heart::after {
+            content: '';
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .heart::before {
+            top: -50px;
+            left: 0;
+        }
+
+        .heart::after {
+            left: 50px;
+            top: 0;
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1) rotate(-45deg); }
+            50% { transform: scale(1.1) rotate(-45deg); }
+            100% { transform: scale(1) rotate(-45deg); }
+        }
+
+        .bouquet {
+            position: relative;
+            z-index: 2;
+            width: 120px;
+        }
+
+        .heart-container img {
+            position: relative;
+            z-index: 3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="text">Happy Valentine's Day! 💖</div>
+
+    <div class="heart-container">
+        <div class="heart"></div>
+        <img src="59829a4f74ce6425f88976e44583f2a7.jpg" alt="Bouquet" class="bouquet">
+    </div>
+
+</body>
+</html>
